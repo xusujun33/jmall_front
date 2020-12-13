@@ -1,4 +1,4 @@
-# xmall_front
+# jmall_front
 
 ## Project setup
 ```
