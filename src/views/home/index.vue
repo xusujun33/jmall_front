@@ -1,5 +1,6 @@
 <template>
     <div class="index">
+        <!-- 导航栏 -->
         <v-app-bar app color="black" height="100" dark fixed flat hide-on-scroll>
             <v-btn class="ma-4" fab color="" to="/home">
                 <v-icon>mdi-alpha-j</v-icon>
@@ -29,6 +30,7 @@
                 </v-btn>
             </div>
         </v-app-bar>
+        <!-- 工具栏 -->
         <v-toolbar class="toolbar d-flex justify-center" color="white" elevation="1">
             <div class="toolbar-div">
                 <v-toolbar-title class="toolbar-title">
@@ -37,9 +39,10 @@
             </div>
 
         </v-toolbar>
-        <v-container class="index-container">
+        <!-- 内容 -->
+        <v-main class="index-main">
             <router-view></router-view>
-        </v-container>
+        </v-main>
     </div>
 </template>
 
@@ -84,10 +87,6 @@
 
     .toolbar {
         margin-top: 100px;
-    }
-
-    .index-container {
-        width: 1220px;
     }
 
     .toolbar-div {
