@@ -16,3 +16,9 @@
     }),
   };
 </script>
+<style lang="less" >
+  body{
+    min-width: 1250px;
+    min-height: 768px;
+  }
+</style>

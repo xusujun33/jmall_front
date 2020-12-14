@@ -1,12 +1,12 @@
 <template>
-  <v-card max-width="305" elevation="0" hover outlined>
+  <v-card max-width="305"  elevation="0" hover outlined>
     <div>
       <v-card-title class="title">{{ title }}</v-card-title>
 
-      <v-card-subtitle class="title subtitle-1">{{ subtitle }}</v-card-subtitle>
+      <v-card-subtitle class="subtitle">{{ subtitle }}</v-card-subtitle>
     </div>
 
-    <v-img :src="url" height="100"></v-img>
+    <v-img :src="url" height="100"></v-img> 
   </v-card>
 </template>
 
@@ -29,9 +29,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+
 .title {
   display: flex;
   justify-content: center;
+  font-size: 16px;
+}
+.subtitle{
+display: flex;
+  justify-content: center;
+  font-size: 8px;
 }
 </style>
