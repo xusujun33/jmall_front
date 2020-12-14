@@ -1,28 +1,121 @@
 <template>
   <div class="home">
-    <v-container>
+    <v-container class="home-container">
+      <!-- 轮播图 -->
       <carousels></carousels>
-      首页
-
+      <!-- 四个小卡片 -->
+      <v-row no-gutters class="ads-row">
+        <v-col v-for="(item, i) in cardDatas" :key="i" cols="3">
+          <cardview
+            :title="item.title"
+            :subtitle="item.subtitle"
+            :url="item.url"
+          ></cardview>
+        </v-col>
+      </v-row>
+      <!-- 热门商品 -->
+      <div class="hot-product">
+        <v-card>
+          <v-card-title primary-title> 热门商品 </v-card-title>
+        </v-card>
+        <v-row no-gutters>
+          <v-col cols="6" v-for="(item, i) in hotProducts" :key="i">
+            <card-product
+              :title="item.title"
+              :subtitle="item.subtitle"
+              :url="item.url"
+              :price="item.price"
+            ></card-product>
+          </v-col>
+        </v-row>
+      </div>
+      <!-- 官方精选 -->
+      <div class="guanfang-product">
+        <v-card>
+          <v-card-title primary-title> 热门商品 </v-card-title>
+        </v-card>
+        <v-row no-gutters>
+          <v-col :cols="i == 0 ? 6 : 3" v-for="(item, i) in cardDatas" :key="i">
+            <card-product
+              :title="item.title"
+              :subtitle="item.subtitle"
+              :url="item.url"
+              :price="item.price"
+            ></card-product>
+          </v-col>
+        </v-row>
+      </div>
     </v-container>
   </div>
 </template>
 
 <script>
-  import Carousels from '../../components/carousels.vue'
-  export default {
-    name: 'Home',
-    components: {
-      Carousels
-    },
-    data() {
-      return {}
-    },
-  }
+import Cardview from "../../components/cardview.vue";
+import Carousels from "../../components/carousels.vue";
+import pic1 from "../../assets/pic1.png";
+import pic2 from "../../assets/pic2.png";
+import pic3 from "../../assets/pic3.png";
+import pic4 from "../../assets/pic4.png";
+import pic5 from "../../assets/pic5.png";
+import pic6 from "../../assets/pic6.png";
+import CardProduct from "../../components/cardProduct.vue";
+export default {
+  name: "Home",
+  components: {
+    Carousels,
+    Cardview,
+    CardProduct,
+  },
+  data() {
+    return {
+      hotProducts: [
+        {
+          title: "IPhone X 全面屏 全面绽放",
+          subtitle: "此商品为测试商品，拍下不能发货",
+          url: pic5,
+          price: "4999.00",
+        },
+        {
+          title: "捐赠商品",
+          subtitle: "您的捐赠将用于本站维护 给您带来更好的体验",
+          url: pic6,
+          price: "1.00",
+        },
+      ],
+      cardDatas: [
+        {
+          title: "Smartisan 新品配件",
+          subtitle: "功夫配件，一应俱全",
+          url: pic1,
+        },
+        {
+          title: "以旧换新",
+          subtitle: "两重优惠最高补贴400元",
+          url: pic2,
+        },
+        {
+          title: "Smartisan 周边新品",
+          subtitle: "周边新品，应季上新",
+          url: pic3,
+        },
+        {
+          title: "推荐购机有好礼",
+          subtitle: "推荐购买手机成功者，可获耳机一条",
+          url: pic4,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
-  /* .home-container {
-    width: 1220px;
-  } */
+.home-container {
+  width: 1220px;
+}
+.ads-row,
+.hot-product,
+.guanfang-product {
+  margin-top: 28px;
+}
 </style>
