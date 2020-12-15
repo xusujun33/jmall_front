@@ -1,6 +1,6 @@
-# jmall_front
+# Jmall 商城项目
 
-## Project setup
+## 这是基于vue下的vuetify框架开发的一个前后端分离商城练习项目
 ```
 npm install
 ```
