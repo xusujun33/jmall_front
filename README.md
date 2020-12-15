@@ -1,18 +1,25 @@
 # Jmall 商城项目
 
-## 这是基于vue下的vuetify框架开发的一个前后端分离商城练习项目
+## 这是我个人用vue前端框架vuetify开发的一个前后端分离商城练习项目
 ```
-npm install
+使用的vue核心插件主要包括：
+    "vuetify”
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "less": "^3.13.0",
+    "less-loader": "^7.1.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuetify": "^2.2.11",
+    "vuex": "^3.4.0"
 ```
 
-### Compiles and hot-reloads for development
+### 商城核心功能包括
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+商城功能包括：
+1、商城产品展示（初步完成）
+2、用户登录（未完成）
+3、购物车（未完成）
 ```
 
 ### Customize configuration
