@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/home/index'
 import Home from '../views/home/home'
-import Goods from '../views/home/goods.vue'
+import Goods from '../views/goods/goods.vue'
 import Login from '../views/login/login.vue'
+import Thanks from '../views/thanks/thanks.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [{
         path: '/goods',
         name: 'Goods',
         component: Goods
+      },
+      {
+        path: '/thanks',
+        name: 'Thanks',
+        component: Thanks
       },
     ]
   },

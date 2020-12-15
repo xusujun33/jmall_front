@@ -1,6 +1,10 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-card min-height="400" hover>
+    <v-card
+      height="400"
+      :elevation="hover ? 12 : 0"
+      class="transition-swing rounded-0"
+    >
       <div class="product-card">
         <v-img :src="url" :lazy-src="url" width="200" height="200">
           <template v-slot:placeholder>
@@ -12,14 +16,16 @@
             </v-row>
           </template>
         </v-img>
-        <div>
+        <div v-if="show">
           <v-card-title class="product-title">{{ title }}</v-card-title>
-          <v-card-subtitle class="product-title">
+          <v-card-subtitle class="product-subtitle grey--text text-caption">
             {{ subtitle }}
           </v-card-subtitle>
         </div>
-        <div class="product-price" v-show="!hover">￥ {{ price }}</div>
-        <div class="btn-group" v-show="hover">
+        <div v-if="show" class="product-price" v-show="!hover">
+          ￥ {{ price }}
+        </div>
+        <div v-if="show" class="btn-group" v-show="hover">
           <v-btn depressed outlined small text width="100">查看详情</v-btn>
           <v-btn depressed small dark width="100" class="indigo"
             >加入购物车</v-btn
@@ -37,21 +43,22 @@ export default {
     return {};
   },
   props: {
+    show: {
+      type: Boolean,
+      default: true,
+    },
     title: {
       type: String,
-      required: true,
     },
     subtitle: {
       type: String,
-      required: true,
     },
     url: {
       type: String,
       required: true,
     },
     price: {
-      type: String,
-      required: true,
+      type: Number,
     },
   },
 };
@@ -65,6 +72,11 @@ export default {
   justify-content: center;
   align-items: center;
   .product-title {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .product-subtitle {
     display: flex;
     justify-content: center;
   }

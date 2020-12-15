@@ -1,40 +1,43 @@
 <template>
-  <v-carousel>
-    <v-carousel-item
-      v-for="(item, i) in items"
-      :key="i"
-      :src="item.src"
-      show-arrows="false"
-      cycle
-      hide-delimiter-background
-    >
+  <v-carousel
+    height="480px"
+    cycle
+    hide-delimiter-background
+    show-arrows-on-hover
+  >
+    <v-carousel-item v-for="(item, i) in banners" :key="i">
+      <div class="img-box">
+        <v-img class="img1 " v-if="item.picUrl" :src="item.picUrl"></v-img>
+        <v-img class="img2" v-if="item.picUrl2" :src="item.picUrl2"></v-img>
+        <v-img class="img3" v-if="item.picUrl3" :src="item.picUrl3"></v-img>
+      </div>
     </v-carousel-item>
   </v-carousel>
 </template>
 
 <script>
-import img1 from '../assets/5bdebb41e11f4.jpg'
-import img2 from '../assets/5bdebbd45a0b0.jpg'
-import img3 from '../assets/Ccdiid.png'
 export default {
   name: "Carousels",
+  props: {
+    banners: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
-    return {
-      items: [
-        {
-          src: img1,
-        },
-        {
-          src: img2,
-        },
-        {
-          src:img3
-        }
-      ],
-    };
+    return {};
   },
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+.img-box {
+  .img1,
+  .img2,
+  .img3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>

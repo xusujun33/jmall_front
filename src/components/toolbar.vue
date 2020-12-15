@@ -1,7 +1,7 @@
 <template>
   <v-toolbar class="toolbar" color="white" elevation-1>
     <div class="toolbar-div">
-      <v-breadcrumbs :items="items" divider="-"></v-breadcrumbs>
+      <v-breadcrumbs :items="items" divider="-" ></v-breadcrumbs>
     </div>
   </v-toolbar>
 </template>

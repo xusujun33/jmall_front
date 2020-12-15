@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 import less from 'less';
+import axios from 'axios'
 
+Vue.prototype.$axios = axios
 Vue.use(less)
 
 Vue.config.productionTip = false

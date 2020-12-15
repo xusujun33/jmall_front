@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <v-app>
+        <router-view class="main"></router-view>
+    </v-app>
   </div>
-
 </template>
 
 <script>
-  export default {
-    name: 'App',
+export default {
+  name: "App",
 
-    components: {},
+  components: {},
 
-    data: () => ({
-      //
-    }),
-  };
+  data: () => ({
+    //
+  }),
+};
 </script>
 <style lang="less" >
-  body{
-    min-width: 1250px;
-    min-height: 768px;
-  }
+body {
+  min-width: 1024px;
+  min-height: 768px;
+}
+.main {
+  background-color: #ededed;
+}
 </style>
