@@ -125,9 +125,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.home-container {
-  width: 1220px;
-}
 .ads-row,
 .hot-product,
 .guanfang-product {

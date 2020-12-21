@@ -8,16 +8,8 @@
 
       <v-spacer></v-spacer>
       <div class="search-box">
-        <v-text-field
-          flat
-          solo-inverted
-          hide-details
-          prepend-inner-icon="mdi-magnify"
-          label="输入商品信息"
-          clearable
-          class="hidden-sm-and-down"
-          style="width: 300px"
-        ></v-text-field>
+        <v-text-field flat solo-inverted hide-details prepend-inner-icon="mdi-magnify" label="输入商品信息" clearable
+          class="hidden-sm-and-down" style="width: 300px"></v-text-field>
       </div>
       <div class="mx-12">
         <v-btn text class="grey--text text--lighten-2" to="/goods">
@@ -42,19 +34,15 @@
     <v-main>
       <!--二级导航栏 -->
       <toolbar></toolbar>
-      <router-view></router-view>
+      <router-view class="main-container"></router-view>
     </v-main>
     <!-- 页脚内容 -->
     <v-footer>
       <v-container class="footer-container">
         <v-row class="pa-3">
           <v-col v-for="(item, i) in footerlist" :key="i">
-            <footer-list
-              :title="item.title"
-              :subTitle1="item.subtitle1"
-              :subTitle2="item.subtitle2"
-              :subTitle3="item.subtitle3"
-            ></footer-list>
+            <footer-list :title="item.title" :subTitle1="item.subtitle1" :subTitle2="item.subtitle2"
+              :subTitle3="item.subtitle3"></footer-list>
           </v-col>
           <v-spacer></v-spacer>
           <v-row class="align-end flex-column justify-end">
@@ -68,10 +56,8 @@
         <v-divider></v-divider>
         <div class="pa-3">
           <v-row>
-            <span class="text-caption grey--text"
-              >Copyright ©2017, exrick.cn Co., Ltd. All Rights
-              Reserved.本网站设计内容大部分属锤子科技</span
-            >
+            <span class="text-caption grey--text">Copyright ©2017, exrick.cn Co., Ltd. All Rights
+              Reserved.本网站设计内容大部分属锤子科技</span>
           </v-row>
           <v-row>
             <a href="http://">
@@ -88,79 +74,88 @@
 </template>
 
 <script>
-import FooterList from "../../components/footerList.vue";
-import Toolbar from "../../components/toolbar.vue";
-export default {
-  name: "Index",
-  data() {
-    return {
-      footerlist: [
-        {
-          title: "订单服务",
-          subtitle1: "购买指南",
-          subtitle2: "支付方式",
-          subtitle3: "送货政策",
-        },
-        {
-          title: "订单服务",
-          subtitle1: "购买指南",
-          subtitle2: "支付方式",
-          subtitle3: "送货政策",
-        },
-        {
-          title: "订单服务",
-          subtitle1: "购买指南",
-          subtitle2: "支付方式",
-          subtitle3: "送货政策",
-        },
-        {
-          title: "订单服务",
-          subtitle1: "购买指南",
-          subtitle2: "支付方式",
-          subtitle3: "送货政策",
-        },
-        {
-          title: "订单服务",
-          subtitle1: "购买指南",
-          subtitle2: "支付方式",
-          subtitle3: "送货政策",
-        },
-        {
-          title: "订单服务",
-          subtitle1: "购买指南",
-          subtitle2: "支付方式",
-          subtitle3: "送货政策",
-        },
-      ],
-    };
-  },
-  components: {
-    Toolbar,
-    FooterList,
-  },
-  methods: {},
-};
+  import FooterList from "../../components/footerList.vue";
+  import Toolbar from "../../components/toolbar.vue";
+  export default {
+    name: "Index",
+    data() {
+      return {
+        footerlist: [{
+            title: "订单服务",
+            subtitle1: "购买指南",
+            subtitle2: "支付方式",
+            subtitle3: "送货政策",
+          },
+          {
+            title: "订单服务",
+            subtitle1: "购买指南",
+            subtitle2: "支付方式",
+            subtitle3: "送货政策",
+          },
+          {
+            title: "订单服务",
+            subtitle1: "购买指南",
+            subtitle2: "支付方式",
+            subtitle3: "送货政策",
+          },
+          {
+            title: "订单服务",
+            subtitle1: "购买指南",
+            subtitle2: "支付方式",
+            subtitle3: "送货政策",
+          },
+          {
+            title: "订单服务",
+            subtitle1: "购买指南",
+            subtitle2: "支付方式",
+            subtitle3: "送货政策",
+          },
+          {
+            title: "订单服务",
+            subtitle1: "购买指南",
+            subtitle2: "支付方式",
+            subtitle3: "送货政策",
+          },
+        ],
+      };
+    },
+    components: {
+      Toolbar,
+      FooterList,
+    },
+    methods: {},
+  };
 </script>
 
 <style lang="less" scoped>
-.divied {
-  color: gray;
-  font-weight: bold;
-}
-.search-box {
-  width: 300px;
-  margin-right: 50px;
-}
-a {
-  text-decoration: none;
-  .aaa {
-    color: grey;
-    &:hover {
-      color: indigo;
+  .main-container {
+    width: 1220px;
+    margin: 0 auto;
+  }
+
+  .divied {
+    color: gray;
+    font-weight: bold;
+  }
+
+  .search-box {
+    width: 300px;
+    margin-right: 50px;
+  }
+
+  a {
+    text-decoration: none;
+
+    .aaa {
+      color: grey;
+
+      &:hover {
+        color: indigo;
+      }
     }
   }
-}
-.footer-container{
-  width: 1220px;
-}
+
+  .footer-container {
+    width: 1220px;
+  }
 </style>

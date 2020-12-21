@@ -1,19 +1,11 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-card
-      height="400"
-      :elevation="hover ? 12 : 0"
-      class="transition-swing rounded-0"
-      outlined
-    >
+    <v-card height="400" :class="{hoverClass:hover}" class="transition-swing rounded-0" outlined>
       <div class="product-card">
         <v-img :src="url" :lazy-src="url" width="200" height="200">
           <template v-slot:placeholder>
             <v-row class="fill-height ma-0" align="center" justify="center">
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              ></v-progress-circular>
+              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
             </v-row>
           </template>
         </v-img>
@@ -28,9 +20,7 @@
         </div>
         <div v-if="show" class="btn-group" v-show="hover">
           <v-btn depressed outlined small text width="100">查看详情</v-btn>
-          <v-btn depressed small dark width="100" class="indigo"
-            >加入购物车</v-btn
-          >
+          <v-btn depressed small dark width="100" class="indigo">加入购物车</v-btn>
         </div>
       </div>
     </v-card>
@@ -38,58 +28,68 @@
 </template>
 
 <script>
-export default {
-  name: "CardProduct",
-  data() {
-    return {};
-  },
-  props: {
-    show: {
-      type: Boolean,
-      default: true,
+  export default {
+    name: "CardProduct",
+    data() {
+      return {};
     },
-    title: {
-      type: String,
+    props: {
+      show: {
+        type: Boolean,
+        default: true,
+      },
+      title: {
+        type: String,
+      },
+      subtitle: {
+        type: String,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: Number,
+      },
     },
-    subtitle: {
-      type: String,
-    },
-    url: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-    },
-  },
-};
+  };
 </script>
 
 <style lang="less" scoped>
-.product-card {
-  padding: 24px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .product-title {
+  .hoverClass {
+    box-shadow: 0px 0px 5px #888888;
+    // transform: translateY(-1px);
+
+  }
+
+  .product-card {
+    padding: 24px 0 0 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-size: 16px;
+    align-items: center;
+
+    .product-title {
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .product-subtitle {
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-price {
+      color: red;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      width: 220px;
+    }
   }
-  .product-subtitle {
-    display: flex;
-    justify-content: center;
-  }
-  .product-price {
-    color: red;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  .btn-group {
-    display: flex;
-    justify-content: space-between;
-    width: 220px;
-  }
-}
-</style>  
+</style>
