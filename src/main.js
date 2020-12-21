@@ -7,6 +7,8 @@ import less from 'less';
 import axios from 'axios'
 
 Vue.prototype.$axios = axios
+axios.defaults.baseURL = "/api";
+axios.defaults.timeout = 2000;
 Vue.use(less)
 
 Vue.config.productionTip = false

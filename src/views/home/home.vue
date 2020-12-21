@@ -108,7 +108,7 @@ export default {
   },
   created() {
     this.$axios
-      .get("/api/home")
+      .get("/home")
       .then((res) => {
         console.log(res);
         this.banners = res.data.result.find(

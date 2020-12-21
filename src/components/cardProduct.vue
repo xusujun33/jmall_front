@@ -4,6 +4,7 @@
       height="400"
       :elevation="hover ? 12 : 0"
       class="transition-swing rounded-0"
+      outlined
     >
       <div class="product-card">
         <v-img :src="url" :lazy-src="url" width="200" height="200">
@@ -17,7 +18,7 @@
           </template>
         </v-img>
         <div v-if="show">
-          <v-card-title class="product-title">{{ title }}</v-card-title>
+          <v-card-title class="product-title text-center">{{ title }}</v-card-title>
           <v-card-subtitle class="product-subtitle grey--text text-caption">
             {{ subtitle }}
           </v-card-subtitle>
