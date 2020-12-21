@@ -1,9 +1,17 @@
 <template>
-  <v-toolbar class="toolbar" color="white" elevation-1>
-    <div class="toolbar-div">
-      <v-breadcrumbs :items="items" divider="-" ></v-breadcrumbs>
-    </div>
-  </v-toolbar>
+  <div>
+    <v-toolbar class="toolbar" color="white" elevation-1>
+      <v-container>
+        <v-breadcrumbs divider="-" :items="items">
+          <template v-slot:item="{ item }">
+            <v-breadcrumbs-item :to="item.href">
+              <span class=""> {{ item.text }}</span>
+            </v-breadcrumbs-item>
+          </template>
+        </v-breadcrumbs>
+      </v-container>
+    </v-toolbar>
+  </div>
 </template>
 
 <script>
@@ -14,17 +22,14 @@ export default {
       items: [
         {
           text: "首页",
-          disabled: false,
           href: "home",
         },
         {
           text: "全部",
-          disabled: false,
           href: "goods",
         },
         {
           text: "品牌周边",
-          disabled: false,
           href: "aa",
         },
       ],
@@ -33,9 +38,8 @@ export default {
 };
 </script>
 
-<style>
-.toolbar-div {
-  width: 1180px;
-  margin: auto;
+<style lang="less" scoped>
+.router-link-active {
+  color: indigo;
 }
 </style>

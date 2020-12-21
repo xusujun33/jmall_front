@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <v-container>
-      <v-row class="d-flex justify-center">
+    <v-container class="home-container">
+      <v-row class="justify-center">
         <v-col>
           <!-- 轮播图 -->
           <carousels :banners="banners" class="rounded-lg"></carousels>
@@ -49,7 +49,7 @@
                   <v-hover v-slot:default="{ hover }">
                     <v-col cols="6" slot="first-product">
                       <v-img
-                      height="400"
+                        height="400"
                         :class="`elevation-${hover ? 12 : 0}`"
                         :src="item.panelContents[0].picUrl"
                         class="transition-swing"
@@ -124,7 +124,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.home-container {
+  width: 1220px;
+}
 .ads-row,
 .hot-product,
 .guanfang-product {

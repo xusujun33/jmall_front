@@ -46,7 +46,7 @@
     </v-main>
     <!-- 页脚内容 -->
     <v-footer>
-      <v-container>
+      <v-container class="footer-container">
         <v-row class="pa-3">
           <v-col v-for="(item, i) in footerlist" :key="i">
             <footer-list
@@ -159,5 +159,8 @@ a {
       color: indigo;
     }
   }
+}
+.footer-container{
+  width: 1220px;
 }
 </style>
