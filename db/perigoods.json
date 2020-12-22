@@ -1,0 +1,53 @@
+{
+    "success": true,
+    "message": "success",
+    "code": 200,
+    "timestamp": 1608603604875,
+    "result": {
+        "total": 6,
+        "data": [
+            {
+                "productId": 150642571432849,
+                "salePrice": 9.90,
+                "productName": "Smartisan 明信片",
+                "subTitle": "优质卡纸、包装精致、色彩饱满",
+                "productImageBig": "https://resource.smartisan.com/resource/3973d009d182d8023bea6250b9a3959e.jpg"
+            },
+            {
+                "productId": 150642571432848,
+                "salePrice": 199.00,
+                "productName": "Smartisan 牛津纺衬衫",
+                "subTitle": "一件无拘无束的舒适衬衫",
+                "productImageBig": "https://resource.smartisan.com/resource/a1c53b5f12dd7ef790cadec0eaeaf466.jpg"
+            },
+            {
+                "productId": 150642571432847,
+                "salePrice": 249.00,
+                "productName": "Smartisan Polo衫 经典款",
+                "subTitle": "一件表里如一的舒适 POLO 衫",
+                "productImageBig": "https://resource.smartisan.com/resource/daa975651d6d700c0f886718c520ee19.jpg"
+            },
+            {
+                "productId": 150642571432846,
+                "salePrice": 149.00,
+                "productName": "Smartisan T恤 任天堂发售“红白机”",
+                "subTitle": "100% 美国 SUPIMA 棉、舒适拉绒质地",
+                "productImageBig": "https://resource.smartisan.com/resource/804edf579887b3e1fae4e20a379be5b5.png"
+            },
+            {
+                "productId": 150642571432845,
+                "salePrice": 199.00,
+                "productName": "Smartisan 帆布鞋",
+                "subTitle": "一双踏实、舒适的帆布鞋",
+                "productImageBig": "https://resource.smartisan.com/resource/2f9a0f5f3dedf0ed813622003f1b287b.jpg"
+            },
+            {
+                "productId": 150642571432836,
+                "salePrice": 149.00,
+                "productName": "Smartisan T恤 伍迪·艾伦出生",
+                "subTitle": "一件内外兼修的舒适T恤",
+                "productImageBig": "https://resource.smartisan.com/resource/f96f0879768bc317b74e7cf9e3d96884.jpg"
+            }
+        ]
+    }
+}

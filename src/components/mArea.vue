@@ -12,6 +12,9 @@
         <slot name="first-product"></slot>
       </slot>
     </div>
+    <div>
+      <slot></slot>
+    </div>
   </div>
 </template>
 

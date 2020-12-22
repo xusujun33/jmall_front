@@ -15,43 +15,44 @@
 </template>
 
 <script>
-  export default {
-    name: "Toolbar",
-    data() {
-      return {
-        items: [{
-            text: "首页",
-            href: "home",
-          },
-          {
-            text: "全部",
-            href: "goods",
-          },
-          {
-            text: "品牌周边",
-            href: "aa",
-          },
-        ],
-      };
-    },
-  };
+export default {
+  name: "Toolbar",
+  data() {
+    return {
+      items: [
+        {
+          text: "首页",
+          href: "home",
+        },
+        {
+          text: "全部",
+          href: "goods",
+        },
+        {
+          text: "品牌周边",
+          href: "perigoods",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="less" scoped>
-  .bread-container {
-    width: 1220px;
+.bread-container {
+  width: 1220px;
+}
+
+.bread-a-item {
+  text-decoration: none;
+  color: rgb(82, 82, 82);
+
+  &:active {
+    color: royalblue;
   }
 
-  .bread-a-item {
-    text-decoration: none;
-    color: rgb(82, 82, 82);
-
-    &:active {
-      color: royalblue;
-    }
-
-    &:hover {
-      color: royalblue;
-    }
+  &:hover {
+    color: royalblue;
   }
+}
 </style>

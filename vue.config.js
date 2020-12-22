@@ -29,10 +29,10 @@ module.exports = {
       app.get("/api/allgoods", (req, res) => {
         fs.readFile("./db/allgoods.json", "utf-8", function (err, data) {
           if (!err) {
-            let page = req.query.page;
-            let sort = req.query.sort;
+            let page = req.query.page; //获取页码参数
+            let sort = req.query.sort; //排序参数
             let goodsData = JSON.parse(data).result;
-            let total = goodsData.total;
+            let total = goodsData.total; //商品总数
             if (sort == -1) {
               let num = parseInt(page);
               let sorted = goodsData.data.sort(sortAsc);
@@ -65,6 +65,32 @@ module.exports = {
           }
         })
       });
+
+      // 获取捐赠信息
+      app.get("/api/thanks", (req, res) => {
+        fs.readFile("./db/thanks.json", "utf-8", (err, data) => {
+          if (!err) {
+            let page = req.query.page;
+            let thanksData = JSON.parse(data).result;
+            let num = parseInt(page);
+            let sliceResult = thanksData.data.slice((num - 1) * 10, num * 10);
+            res.json({
+              result: sliceResult
+            });
+          } else {
+            res.json({
+              message: err.message
+            })
+          }
+        })
+      });
+
+      //所有错误
+      app.get((req, res) => {
+        res.json({
+          message: 'api不存在'
+        })
+      })
     }
   }
 }
